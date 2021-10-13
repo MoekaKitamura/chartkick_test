@@ -27,3 +27,7 @@ rails db:migrate
 
 seedデータをcsvで投入
 rails db:seed
+
+google map API取得 => 地図表示
+
+gem 'dotenv-rails'を使って.envに書く、.gitignoreも編集
