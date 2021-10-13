@@ -36,6 +36,24 @@
    </tbody>
  </table>
 
- <br>
+<p>・登録ユーザーの国別数</p>
+ <%= Profile.group(:home_country).count %>
+
+<p>地図</p>
+ <%= geo_chart Profile.group(:home_country).count %>
+
+<p>地図データ確認code</p>
+ <%= Place.group(:code).count.size %>ヶ国中
+ <%= Place.group(:code).count %>
+ <%= geo_chart Place.group(:code).count %>
+
+<p>地図データ確認name</p>
+ <%= Place.group(:name_en).count.size %>
+ <%= Place.group(:name_en).count %>
+ <%= geo_chart Place.group(:name_en).count %>
+
+<p>サンプル</p>
+ <%= geo_chart [['Popularity'], ['Germany', 200], ['United States', 300], ['Brazil', 400], ['Canada', 500], ['France', 600], ['RU', 700]], colors: ["#33C1FF", "#008ED6"] %> 
+
 
  <%= link_to 'New Profile', new_profile_path %>
