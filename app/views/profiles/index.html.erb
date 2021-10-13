@@ -102,4 +102,21 @@
     } 
   </script>
 
+        <i class="flag-icon flag-icon-jp"></i>
+        <i class="flag-icon flag-icon-us"></i>
+        <i class="flag-icon flag-icon-cc"></i>
+        <i class="flag-icon flag-icon-ai"></i>
+
+        <hr />
+        <i class="flag-icon flag-icon-jp flag-icon-squared"></i>
+        <i class="flag-icon flag-icon-us flag-icon-squared"></i>
+
+
  <%= link_to 'New Profile', new_profile_path %>
+
+ <hr>
+   <i class="flag-icon flag-icon-<%= Place.find(87).code.downcase %>"></i>
+
+ <% @places.each do |place| %>
+   <i class="flag-icon flag-icon-<%= place.code.downcase %>"></i>
+ <% end %>

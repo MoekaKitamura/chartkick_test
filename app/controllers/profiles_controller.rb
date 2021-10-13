@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   # GET /profiles
   def index
     @profiles = Profile.all
+    @places = Place.all
   end
 
   # GET /profiles/1
