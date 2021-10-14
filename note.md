@@ -31,3 +31,7 @@ rails db:seed
 google map API取得 => 地図表示
 
 gem 'dotenv-rails'を使って.envに書く、.gitignoreも編集
+
+flag-css
+codeと使って国旗表示
+

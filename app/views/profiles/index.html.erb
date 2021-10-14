@@ -57,7 +57,7 @@
 
 <p>Google Map</p>
 
-<p>日本の緯度: <%= Place.find(87).latitude %> 経度:<%= Place.find(87).name_jp %></p>
+<p>日本の緯度: <%= Place.find(87).latitude %> 経度:<%= Place.find(87).longitude %></p>
 <div id="map"></div>
 
   <script>
@@ -114,9 +114,12 @@
 
  <%= link_to 'New Profile', new_profile_path %>
 
- <hr>
    <i class="flag-icon flag-icon-<%= Place.find(87).code.downcase %>"></i>
 
+ <hr>
  <% @places.each do |place| %>
-   <i class="flag-icon flag-icon-<%= place.code.downcase %>"></i>
+  <p>
+  <%= place.id %>
+  <%= place.name_jp %>
+  <i class="flag-icon flag-icon-<%= place.code.downcase %>"></i></p>
  <% end %>

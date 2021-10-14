@@ -7,12 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
 
-CSV.foreach('db/country.csv', headers: true) do |row|
+# CSV.foreach('db/country.csv', headers: true) do |row|
+#   Place.create(
+#     code: row['code'],
+#     name_jp:row['name_jp'],
+#     name_en: row['name_en'],
+#     latitude: row['latitude'],
+#     longitude: row['longitude']
+#   )
+# end
+
+CSV.foreach('db/country2.csv', headers: true) do |row|
   Place.create(
-    code: row['code'],
     name_jp:row['name_jp'],
     name_en: row['name_en'],
-    latitude: row['latitude'],
-    longitude: row['longitude']
+    code: row['code'],
   )
 end
