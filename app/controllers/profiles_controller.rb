@@ -5,6 +5,9 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
     @places = Place.all
+    @from = Place.find(5)
+    @to = Place.find(225)
+    @middle = Geocoder::Calculations.geographic_center([@to,@from]) #中間地点
   end
 
   # GET /profiles/1
